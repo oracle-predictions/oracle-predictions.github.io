@@ -9,7 +9,7 @@ BUILD_ENV=$1
 BUILD_TARGET=$2
 
 # Копируем приложение
-cp -r $APP_DIR $BUILD_DIR
+rsync -av --exclude='.git' $APP_DIR/ $BUILD_DIR/
 
 # Переходим в директорию приложения
 cd $BUILD_DIR || exit
