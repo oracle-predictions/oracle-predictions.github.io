@@ -5,6 +5,8 @@ APP_DIR="../app"
 BUILD_DIR="./app"
 DIST_DIR="./app/dist"
 TARGET_DIR="."
+BUILD_ENV=$1
+BUILD_TARGET=$2
 
 # Копируем приложение
 cp -r $APP_DIR $BUILD_DIR
@@ -13,7 +15,7 @@ cp -r $APP_DIR $BUILD_DIR
 cd $BUILD_DIR || exit
 
 # Выполняем сборку приложения
-npm run build:prod:tg
+npm run build:$BUILD_ENV:$BUILD_TARGET
 
 # Возвращаемся в предыдущую директорию
 cd .. || exit
